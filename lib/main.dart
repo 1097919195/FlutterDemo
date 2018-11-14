@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   demoPlugin.invokeMethod('interaction');
                   },
                 color: Colors.blue[400],
-                child: new Text('RaisedButton',
+                child: new Text('打开渠道关联的界面',
                     style: new TextStyle(color: Colors.white))),
 
           ],
