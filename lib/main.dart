@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,6 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    const demoPlugin = const MethodChannel('demo.plugin');
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -98,6 +101,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+
+            RaisedButton(
+                onPressed: () {
+                  demoPlugin.invokeMethod('interaction');
+                  },
+                color: Colors.blue[400],
+                child: new Text('RaisedButton',
+                    style: new TextStyle(color: Colors.white))),
+
           ],
         ),
       ),
